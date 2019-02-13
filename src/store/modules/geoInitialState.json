@@ -1,0 +1,61 @@
+{
+	"36": {
+		"counties": {
+			"type": "FeatureCollection",
+			"features": []
+		},
+		"cousubs": {
+			"type": "FeatureCollection",
+			"features": []
+		},
+		"tracts": {
+			"type": "FeatureCollection",
+			"features": []
+		},
+		"zips": {
+			"type": "FeatureCollection",
+			"features": []
+		}
+	},
+	"mesh": {
+		"36": {
+			"counties": {
+				"type": "FeatureCollection",
+				"features": []
+			},
+			"cousubs": {
+				"type": "FeatureCollection",
+				"features": []
+			},
+			"tracts": {
+				"type": "FeatureCollection",
+				"features": []
+			},
+			"zips": {
+				"type": "FeatureCollection",
+				"features": []
+			}
+		}
+	},
+	"merge": {
+		"36": {
+			"counties": {
+				"type": "MultiPolygon",
+				"coordinates": []
+			},
+			"cousubs": {
+				"type": "MultiPolygon",
+				"coordinates": []
+			},
+			"tracts": {
+				"type": "MultiPolygon",
+				"coordinates": []
+			},
+			"zips": {
+				"type": "MultiPolygon",
+				"coordinates": []
+			}
+		}
+	}
+
+}

@@ -1,0 +1,73 @@
+import { Component, Children } from 'react';
+import PropTypes from 'prop-types';
+// import expandCache from './ExpandCache';
+
+import createStore from './createStore';
+
+function debounce(func, wait) {
+  let timeout;
+  return function doDebounce() {
+    const context = this;
+    const args = arguments;
+    const later = () => {
+      timeout = null;
+      func.apply(context, args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
+function attachOnChange(falcor, store) {
+  // TODO: Throttle requests here
+  const handler = debounce(() => {
+    // console.log('attachOnChange', expandCache(falcor.getCache()), falcor.getCache())
+    // store.trigger(expandCache(falcor.getCache()))
+    // expand cache is designed for falcor v0.1.* 
+    store.trigger(falcor.getCache());
+  }, 50);
+
+  const root = falcor._root;
+  if (!root.onChange) {
+    root.onChange = handler;
+    return;
+  }
+
+  const oldOnChange = root.onChange;
+  root.onChange = () => {
+    oldOnChange();
+    handler();
+  };
+}
+
+export default class FalcorProvider extends Component {
+  static propTypes = {
+    falcor: PropTypes.object.isRequired,
+    store: PropTypes.object.isRequired,
+    children: PropTypes.element.isRequired,
+  };
+
+  static childContextTypes = {
+    falcor: PropTypes.object.isRequired,
+    falcorStore: PropTypes.object.isRequired,
+  };
+
+  constructor(props, context) {
+    super(props, context);
+    this.falcor = props.falcor;
+    this.falcorStore = createStore(props.store);
+    attachOnChange(props.falcor, this.falcorStore);
+  }
+
+  getChildContext() {
+    return {
+      falcor: this.falcor,
+      falcorStore: this.falcorStore,
+    };
+  }
+
+  render() {
+    const { children } = this.props;
+    return Children.only(children);
+  }
+}

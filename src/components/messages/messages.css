@@ -1,0 +1,43 @@
+.system-message-container {
+	position: fixed;
+	z-index: 950;
+	right: 100px;
+	top: 100px;
+}
+
+.system-message {
+	position: absolute;
+	font-size: 1.25rem;
+	font-weight: 500;
+	transition: opacity 0.5s ease-in-out,
+		top 0.5s ease-in-out,
+		right 0.5s ease-in-out;
+	padding: 1.25rem 1.25rem 1.2rem 2rem;
+	border-radius: 4px;
+	white-space: nowrap;
+}
+.system-message.init {
+	opacity: 0;
+	right: 200px;
+}
+.system-message.show {
+	opacity: 1;
+	right: 0px;
+}
+.system-message.hide {
+	opacity: 0;
+	right: -200px;
+}
+.system-message > span {
+	padding-right: 5rem;
+}
+.system-message > button.close {
+	font-size: 1.75rem;
+	font-weight: 900;
+	position: absolute;
+	right: 1.5rem;
+	top: 1.2rem;
+}
+.system-message.confirm-message button:nth-child(2) {
+	margin-right: 10px;
+}
