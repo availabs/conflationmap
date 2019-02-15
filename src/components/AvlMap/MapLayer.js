@@ -160,7 +160,7 @@ class MapLayer {
     if (e.features.length) {
       this.updatePopover({
       	pos: [e.point.x, e.point.y],
-      	data: this.popover.dataFunc.call(this, e.features[0])
+      	data: this.popover.dataFunc.call(this, e.features[0], map)
       })
     }
 	}
