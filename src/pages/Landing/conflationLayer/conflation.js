@@ -3,6 +3,7 @@ import inrix from '../geo/inrix_2018_updated.geojson'
 //import osm from '../geo/node_attr_update.geojson'
 import osm from '../geo/bidirectional_ways.geojson'
 import tmc_to_ways from '../geo/tmc_to_ways_mapping.json'
+import TMCDisplay from './tmcDisplay'
 
 
 import {
@@ -145,6 +146,37 @@ const conflation = new MapLayer("TMC Layer", {
         },
 
     ],
+    activeTMC: null,
+    onClick: {
+        layers: ['TMC_layer_inrix_one_way','TMC_layer_inrix_two_way_1'],
+        dataFunc: (feature,layer, map) => {
+            //console.log('onClick: ',map)
+
+            layer.activeTMC = feature.properties.tmc
+
+            // filter OSMs
+
+            let filter_tmp_1 = map.getFilter('TMC_layer_osm_one_way');
+            let filter_tmp_2 = map.getFilter('TMC_layer_osm_two_way_1');
+
+            if(filter_tmp_1.length === 3){
+                filter_tmp_1.pop();
+            }
+            if(filter_tmp_2.length === 3){
+                filter_tmp_2.pop();
+            }
+
+            if (filter_tmp_1.length === 2){
+                filter_tmp_1.push(['in','id',...tmc_to_ways[feature.properties.tmc]]);
+            }
+            if (filter_tmp_2.length === 2){
+                filter_tmp_2.push(['in','id',...tmc_to_ways[feature.properties.tmc]]);
+            }
+
+            map.setFilter('TMC_layer_osm_one_way', filter_tmp_1);
+            map.setFilter('TMC_layer_osm_two_way_1', filter_tmp_2)
+        }
+    },
     popover: {
         layers: ['TMC_layer_inrix_one_way','TMC_layer_inrix_two_way_1','TMC_layer_inrix_two_way_2',
             'TMC_layer_osm_two_way_1','TMC_layer_osm_one_way','TMC_layer_osm_two_way_2'],
@@ -167,16 +199,17 @@ const conflation = new MapLayer("TMC Layer", {
                         }
 
                         this.hoveredStateId = feature.id;
-                        console.log(this.hoveredStateId)
-                        map.setPaintProperty("TMC_layer_inrix_one_way", "line-color",
-                        ["case",
-                            ["==", ["id"], this.hoveredStateId],
-                            "#ff0000",
-                            '#8b7176']);
-                        //console.log('feature before: ', feature)
-                        //map.setFeatureState({'id': this.hoveredStateId},{"line-color": '#ccc'});
-                        //console.log('feature after: ',feature)
-                    // }
+                        if (this.hoveredStateId) {
+                            map.setPaintProperty("TMC_layer_inrix_one_way", "line-color",
+                                ["case",
+                                    ["==", ["id"], this.hoveredStateId],
+                                    "#ff0000",
+                                    '#8b7176']);
+                            //console.log('feature before: ', feature)
+                            //map.setFeatureState({'id': this.hoveredStateId},{"line-color": '#ccc'});
+                            //console.log('feature after: ',feature)
+                            // }
+                        }
                 });
                 map.on("mousemove", "TMC_layer_inrix_two_way_1", function(e) {
 
@@ -192,16 +225,17 @@ const conflation = new MapLayer("TMC Layer", {
                     }
 
                     this.hoveredStateId = feature.id;
-                    console.log(this.hoveredStateId)
-                    map.setPaintProperty("TMC_layer_inrix_two_way_1", "line-color",
-                        ["case",
-                            ["==", ["id"], this.hoveredStateId],
-                            "#ff0000",
-                            '#621b59']);
-                    //console.log('feature before: ', feature)
-                    //map.setFeatureState({'id': this.hoveredStateId},{"line-color": '#ccc'});
-                    //console.log('feature after: ',feature)
-                    // }
+                    if (this.hoveredStateId) {
+                        map.setPaintProperty("TMC_layer_inrix_two_way_1", "line-color",
+                            ["case",
+                                ["==", ["id"], this.hoveredStateId],
+                                "#ff0000",
+                                '#621b59']);
+                        //console.log('feature before: ', feature)
+                        //map.setFeatureState({'id': this.hoveredStateId},{"line-color": '#ccc'});
+                        //console.log('feature after: ',feature)
+                        // }
+                    }
                 });
             }
             if (feature.source === 'inrix'){
@@ -241,7 +275,7 @@ const conflation = new MapLayer("TMC Layer", {
     ],
     infoBoxes: {
         test: {
-            comp: () => <h4>INFO BOX</h4>,
+            comp: () => <TMCDisplay layer={conflation} />,
             show: false
         }
     },

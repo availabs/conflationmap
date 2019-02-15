@@ -118,7 +118,11 @@ class MapLayer {
 
   addOnClick(map) {
     this.onClick.layers.forEach(layer => {
-      map.on("click", layer, this._mapClick)
+      map.on("click", layer, (e) => {
+          if (e.features.length) {
+              this.onClick.dataFunc.call(this, e.features[0],this,map);
+          }
+      })
     })
   }
   removeOnClick(map) {
@@ -126,9 +130,9 @@ class MapLayer {
       map.off("click", layer, this._mapClick)
     })
   }
-  _mapClick(e) {
+  _mapClick(e,map) {
     if (e.features.length) {
-      this.onClick.dataFunc.call(this, e.features[0]);
+      this.onClick.dataFunc.call(this, e.features[0],this,map);
     }
   }
 
