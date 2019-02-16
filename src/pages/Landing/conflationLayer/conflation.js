@@ -153,7 +153,7 @@ const conflation = new MapLayer("TMC Layer", {
             //console.log('onClick: ',map)
 
             layer.activeTMC = feature.properties.tmc
-
+            layer.activeWays = [...tmc_to_ways[feature.properties.tmc]]
             // filter OSMs
 
             let filter_tmp_1 = map.getFilter('TMC_layer_osm_one_way');
