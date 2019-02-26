@@ -1,14 +1,18 @@
 import React from "react"
 import inrix from '../geo/inrix_2018_updated.geojson'
+//import inrix from '../geo/albany_inrix.geojson'
 //import osm from '../geo/node_attr_update.geojson'
-import osm from '../geo/bidirectional_ways.geojson'
-import tmc_to_ways from '../geo/tmc_to_ways_mapping.json'
+//import osm from '../geo/bidirectional_ways.geojson'
+import osm from '../geo/split_ways.geojson'
+//import tmc_to_ways from '../geo/tmc_to_ways_mapping.json'
+import tmc_to_ways from '../geo/tmc_to_split_ways_mapping.json'
 import TMCDisplay from './tmcDisplay'
 
 
 import {
     ArrowDown,
-    ArrowRight
+    ArrowRight,
+    Reset
 } from "components/common/icons"
 
 import MapLayer from "components/AvlMap/MapLayer";
@@ -124,7 +128,7 @@ const conflation = new MapLayer("TMC Layer", {
             },
             'layout': {
                 'visibility': 'visible'},
-            filter: ['all', ['in', 'oneway', 'yes'],['in','id',...waysArray]]
+            filter: ['all', ['in', 'oneway', 'yes'],['in','cid',...waysArray]]
         },
         { 'id': 'TMC_layer_osm_two_way_1',
             'source': 'osm',
@@ -142,7 +146,7 @@ const conflation = new MapLayer("TMC Layer", {
             },
             'layout': {
                 'visibility': 'visible'},
-            filter: ['all', ['!in', 'oneway', 'yes'],['in','id',...waysArray]]
+            filter: ['all', ['!in', 'oneway', 'yes'],['in','cid',...waysArray]]
         },
 
     ],
@@ -154,6 +158,7 @@ const conflation = new MapLayer("TMC Layer", {
 
             layer.activeTMC = feature.properties.tmc
             layer.activeWays = [...tmc_to_ways[feature.properties.tmc]]
+
             // filter OSMs
 
             let filter_tmp_1 = map.getFilter('TMC_layer_osm_one_way');
@@ -167,14 +172,17 @@ const conflation = new MapLayer("TMC Layer", {
             }
 
             if (filter_tmp_1.length === 2){
-                filter_tmp_1.push(['in','id',...tmc_to_ways[feature.properties.tmc]]);
+                //filter_tmp_1.push(['in','cid',...tmc_to_ways[feature.properties.tmc]]);
+                filter_tmp_1.push(['in','tmc',feature.properties.tmc]);
             }
             if (filter_tmp_2.length === 2){
-                filter_tmp_2.push(['in','id',...tmc_to_ways[feature.properties.tmc]]);
+                //filter_tmp_2.push(['in','cid',...tmc_to_ways[feature.properties.tmc]]);
+                filter_tmp_2.push(['in','tmc',feature.properties.tmc]);
             }
 
             map.setFilter('TMC_layer_osm_one_way', filter_tmp_1);
             map.setFilter('TMC_layer_osm_two_way_1', filter_tmp_2)
+
         }
     },
     popover: {
@@ -243,6 +251,7 @@ const conflation = new MapLayer("TMC Layer", {
                 return [feature.properties.tmc,
                     ["Feature ID", feature.id],
                     ["Road Name", feature.properties.roadname],
+                    ["Road Number", feature.properties.roadnumber],
                     ["f_system", feature.properties.f_system],
                     ["Is Primary", feature.properties.isprimary],
 
@@ -250,7 +259,10 @@ const conflation = new MapLayer("TMC Layer", {
             }else if (feature.source === 'osm'){
                 return [feature.properties.id,
                     ["Road Name", feature.properties.name],
+                    ["Road Number", feature.properties.ref],
                     ["Highway", feature.properties.highway],
+                    ["cid", feature.properties.cid],
+                    ["tmc", feature.properties.tmc],
                 ]
             }
             return ["Header", ["Test", "Popover"]]
@@ -276,9 +288,13 @@ const conflation = new MapLayer("TMC Layer", {
     infoBoxes: {
         test: {
             comp: () => <TMCDisplay layer={conflation} />,
-            show: false
+            show: false,
+
+
         }
+
     },
+
     filters : {
         inrix_filter: {
             name: 'Inrix',
@@ -360,6 +376,7 @@ const conflation = new MapLayer("TMC Layer", {
                 //console.log('mode',map.getFilter("TMC_layer_inrix_one_way"));
 
                 if(layer.filters.osm_filter.value === 'default'){
+
 
                     map.setLayoutProperty('TMC_layer_osm_one_way', 'visibility', 'visible');
                     map.setLayoutProperty('TMC_layer_osm_two_way_1', 'visibility', 'visible');
