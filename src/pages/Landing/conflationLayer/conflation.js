@@ -2,10 +2,10 @@ import React from "react"
 import inrix from '../geo/inrix_2018_updated.geojson'
 //import inrix from '../geo/albany_inrix.geojson'
 //import osm from '../geo/node_attr_update.geojson'
-//import osm from '../geo/bidirectional_ways.geojson'
-import osm from '../geo/split_ways.geojson'
-//import tmc_to_ways from '../geo/tmc_to_ways_mapping.json'
-import tmc_to_ways from '../geo/tmc_to_split_ways_mapping.json'
+//import osm from '../geo/bidirectional_ways.geojson' // non split
+import osm from '../geo/split_ways.geojson' // split
+//import tmc_to_ways from '../geo/tmc_to_ways_mapping.json' // non split
+import tmc_to_ways from '../geo/tmc_to_split_ways_mapping.json' // split
 import TMCDisplay from './tmcDisplay'
 
 
@@ -50,7 +50,13 @@ const conflation = new MapLayer("TMC Layer", {
                 'type': "geojson",
                 'data': osm
             }
-        }
+        },
+        { id: "conflation",
+            source: {
+                'type': "vector",
+                'url': 'mapbox://am3081.9zvuz56o'
+            }
+        },
     ],
     layers: [
 
@@ -72,6 +78,26 @@ const conflation = new MapLayer("TMC Layer", {
             'layout': {
                 'visibility': 'visible'},
             filter: ['all',['<=','f_system',2]]
+        },
+
+        { 'id': 'conflation',
+            'source': 'conflation',
+            'type': 'line',
+            'source-layer': 'split_ways',
+            'paint': {
+                'line-color': '#ff1100',
+                'line-width': {
+                    base: 5,
+                    stops: [[5, 5], [18, 13]]
+                },
+                /*'line-offset': {
+                    base: 0,
+                    stops: [[0, 0], [18, 15]]
+                },
+*/
+            },
+            'layout': {
+                'visibility': 'visible'},
         },
         /*{ "id": "state-fills",
             "source": "inrix",
@@ -128,7 +154,9 @@ const conflation = new MapLayer("TMC Layer", {
             },
             'layout': {
                 'visibility': 'visible'},
-            filter: ['all', ['in', 'oneway', 'yes'],['in','cid',...waysArray]]
+            filter: ['all', ['in', 'oneway', 'yes'],['in','cid',...waysArray]] //split
+            //filter: ['all', ['in', 'oneway', 'yes'],['in','id',...waysArray]] // non split
+
         },
         { 'id': 'TMC_layer_osm_two_way_1',
             'source': 'osm',
@@ -146,7 +174,8 @@ const conflation = new MapLayer("TMC Layer", {
             },
             'layout': {
                 'visibility': 'visible'},
-            filter: ['all', ['!in', 'oneway', 'yes'],['in','cid',...waysArray]]
+            filter: ['all', ['!in', 'oneway', 'yes'],['in','cid',...waysArray]] //split
+            //filter: ['all', ['!in', 'oneway', 'yes'],['in','id',...waysArray]] // non split
         },
 
     ],
@@ -156,8 +185,8 @@ const conflation = new MapLayer("TMC Layer", {
         dataFunc: (feature,layer, map) => {
             //console.log('onClick: ',map)
 
-            layer.activeTMC = feature.properties.tmc
-            layer.activeWays = [...tmc_to_ways[feature.properties.tmc]]
+            layer.activeTMC = feature.properties.tmc;
+            layer.activeWays = [...tmc_to_ways[feature.properties.tmc]];
 
             // filter OSMs
 
@@ -172,12 +201,13 @@ const conflation = new MapLayer("TMC Layer", {
             }
 
             if (filter_tmp_1.length === 2){
-                //filter_tmp_1.push(['in','cid',...tmc_to_ways[feature.properties.tmc]]);
-                filter_tmp_1.push(['in','tmc',feature.properties.tmc]);
+                //filter_tmp_1.push(['in','id',...tmc_to_ways[feature.properties.tmc]]); // non split
+                // there has to be two copies to filter out by TMC
+                filter_tmp_1.push(['in','tmc',feature.properties.tmc]); //  split
             }
             if (filter_tmp_2.length === 2){
-                //filter_tmp_2.push(['in','cid',...tmc_to_ways[feature.properties.tmc]]);
-                filter_tmp_2.push(['in','tmc',feature.properties.tmc]);
+                //filter_tmp_2.push(['in','id',...tmc_to_ways[feature.properties.tmc]]); // non split
+                filter_tmp_2.push(['in','tmc',feature.properties.tmc]); //  split
             }
 
             map.setFilter('TMC_layer_osm_one_way', filter_tmp_1);
@@ -263,6 +293,7 @@ const conflation = new MapLayer("TMC Layer", {
                     ["Highway", feature.properties.highway],
                     ["cid", feature.properties.cid],
                     ["tmc", feature.properties.tmc],
+                    ["overlap", feature.properties.overlap]
                 ]
             }
             return ["Header", ["Test", "Popover"]]
@@ -296,7 +327,7 @@ const conflation = new MapLayer("TMC Layer", {
     },
 
     filters : {
-        inrix_filter: {
+        lrs_filter: {
             name: 'Inrix',
             type: 'dropdown',
             domain: ['default','Unmatched inrix','Inrix One way', 'Inrix Two way', 'Off'],
@@ -304,7 +335,7 @@ const conflation = new MapLayer("TMC Layer", {
             onChange: function (map,layer) {
                 //console.log('mode',map.getFilter("TMC_layer_inrix_one_way"));
 
-                if (layer.filters.inrix_filter.value === 'Unmatched inrix'){
+                if (layer.filters.lrs_filter.value === 'Unmatched inrix'){
                     let filter_tmp_1 = map.getFilter("TMC_layer_inrix_one_way");
                     let filter_tmp_2 = map.getFilter("TMC_layer_inrix_two_way_1");
                     //console.log('tmp_1: ',filter_tmp.length);
@@ -321,8 +352,8 @@ const conflation = new MapLayer("TMC Layer", {
                     map.setFilter("TMC_layer_inrix_one_way",filter_tmp_1);
                     map.setFilter("TMC_layer_inrix_two_way_1",filter_tmp_2);
                     //console.log(unmatched_tmc)
-                    //console.log('layer: ',conflation.layers[0].filter);
-                }else if(layer.filters.inrix_filter.value === 'default'){
+                    //console.log('layer: ',conflationLRS.layers[0].filter);
+                }else if(layer.filters.lrs_filter.value === 'default'){
                     let filter_tmp_1 = map.getFilter("TMC_layer_inrix_one_way");
                     let filter_tmp_2 = map.getFilter("TMC_layer_inrix_two_way_1");
                     if (filter_tmp_1.length > 2){
@@ -337,18 +368,18 @@ const conflation = new MapLayer("TMC Layer", {
                     map.setFilter("TMC_layer_inrix_one_way",filter_tmp_1);
                     map.setFilter("TMC_layer_inrix_two_way_1",filter_tmp_2);
 
-                }else if(layer.filters.inrix_filter.value === 'Inrix One way' || 'Inrix Two way' || 'Off'){
+                }else if(layer.filters.lrs_filter.value === 'Inrix One way' || 'Inrix Two way' || 'Off'){
                     //let id = '';
 
-                    if (layer.filters.inrix_filter.value === 'Inrix One way'){
+                    if (layer.filters.lrs_filter.value === 'Inrix One way'){
                         //id = 'TMC_layer_inrix_one_way';
                         map.setLayoutProperty('TMC_layer_inrix_one_way', 'visibility', 'visible');
                         map.setLayoutProperty('TMC_layer_inrix_two_way_1', 'visibility', 'none');
-                    }else if (layer.filters.inrix_filter.value === 'Inrix Two way'){
+                    }else if (layer.filters.lrs_filter.value === 'Inrix Two way'){
                         //id = 'TMC_layer_inrix_two_way_1';
                         map.setLayoutProperty('TMC_layer_inrix_two_way_1', 'visibility', 'visible');
                         map.setLayoutProperty('TMC_layer_inrix_one_way', 'visibility', 'none');
-                    }else if (layer.filters.inrix_filter.value === 'Off'){
+                    }else if (layer.filters.lrs_filter.value === 'Off'){
                         map.setLayoutProperty('TMC_layer_inrix_one_way', 'visibility', 'none');
                         map.setLayoutProperty('TMC_layer_inrix_two_way_1', 'visibility', 'none');
                     }
