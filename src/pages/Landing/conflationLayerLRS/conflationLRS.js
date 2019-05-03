@@ -64,7 +64,7 @@ const conflationLRS = new MapLayer("LRS Layer", {
                 'line-color': '#8b7176',
                 'line-width': {
                     base: 5,
-                    stops: [[5, 5], [18, 13]]
+                    stops: [[5, 7], [18, 15]]
                 },
                 'line-offset': {
                     base: 0,
