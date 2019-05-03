@@ -3,12 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="fa265f0b-1414-4515-bc7a-9c1fc44506af" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Landing/conflationLayer/conflation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Landing/conflationLayer/conflation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Landing/geo/bidirectional_ways.geojson" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Landing/geo/bidirectional_ways.geojson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Landing/conflationLayerLRS/conflationLRS.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Landing/conflationLayerLRS/conflationLRS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Landing/geo/lrs_to_ways_mapping.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Landing/geo/lrs_to_ways_mapping.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Landing/geo/lrs_ways.geojson" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Landing/geo/lrs_ways.geojson" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Landing/geo/split_ways.geojson" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Landing/geo/split_ways.geojson" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Landing/geo/tmc_to_split_ways_mapping.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Landing/geo/tmc_to_split_ways_mapping.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Landing/geo/tmc_to_ways_mapping.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Landing/geo/tmc_to_ways_mapping.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Landing/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Landing/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,112 +17,30 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1604783205">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="4" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.21" value="1" />
-          <entry key="project.open.time.22" value="1" />
-          <entry key="project.open.time.26" value="1" />
-          <entry key="project.open.time.27" value="1" />
-          <entry key="project.open.time.47" value="1" />
-          <entry key="project.open.time.50" value="1" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="10" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="geojson" value="3" />
-          <entry key="js" value="7966" />
-          <entry key="json" value="4" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="7966" />
-          <entry key="PLAIN_TEXT" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="css" value="1" />
-          <entry key="geojson" value="30" />
-          <entry key="js" value="54" />
-          <entry key="json" value="27" />
-          <entry key="scss" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CSS" value="1" />
-          <entry key="JSON" value="27" />
-          <entry key="JavaScript" value="54" />
-          <entry key="PLAIN_TEXT" value="30" />
-          <entry key="SCSS" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/Landing/index.js">
+        <entry file="file://$PROJECT_DIR$/src/pages/Landing/conflationLayer/conflation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+            <state relative-caret-position="324">
+              <caret line="132" column="61" selection-start-line="132" selection-start-column="61" selection-end-line="132" selection-end-column="61" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#0#25#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/Landing/conflationLayer/conflation.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/Landing/conflationLayerLRS/conflationLRS.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+            <state relative-caret-position="-144">
+              <caret line="70" column="61" lean-forward="true" selection-start-line="70" selection-start-column="61" selection-end-line="70" selection-end-column="61" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/lrs.geojson">
-          <provider selected="true" editor-type-id="LargeFileEditor">
-            <state relative-caret-position="174">
-              <caret column="787843" selection-start-column="787837" selection-end-column="787843" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/Landing/conflationLayerLRS/tmcDisplay.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -130,26 +49,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/lrs_ways.geojson">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="1033865" selection-start-column="1033865" selection-end-column="1033865" />
+            <state relative-caret-position="324">
+              <caret column="2705" selection-end-column="828412" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/bidirectional_ways.geojson">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret column="5113451" selection-start-column="5113327" selection-end-column="5113451" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/lrs_to_ways_mapping.json">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/split_ways.geojson">
+        <entry file="file://$PROJECT_DIR$/src/pages/Landing/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret column="963342" selection-start-column="963320" selection-end-column="963342" />
+            <state relative-caret-position="36">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -165,10 +80,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>milepoint</find>
-      <find>unmatched_tmc</find>
-      <find>inrix</find>
-      <find>tmc</find>
       <find>consol</find>
       <find>getFilter</find>
       <find>44733337-_1_s1</find>
@@ -195,6 +106,10 @@
       <find>38269543</find>
       <find>100091</find>
       <find>buildingsLayer</find>
+      <find>tmc</find>
+      <find>tmc&quot;:&quot;</find>
+      <find>&quot;5591513_part_8&quot;</find>
+      <find>210086955</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
@@ -214,7 +129,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/routes.js" />
         <option value="$PROJECT_DIR$/src/store/index.js" />
-        <option value="$PROJECT_DIR$/src/store/config.js" />
         <option value="$PROJECT_DIR$/src/components/AvlMap/components/tooltip/Tooltip.js" />
         <option value="$PROJECT_DIR$/src/components/AvlMap/MapLayer.js" />
         <option value="$PROJECT_DIR$/src/pages/Landing/conflationLayer/tmcDisplay.js" />
@@ -223,30 +137,19 @@
         <option value="$PROJECT_DIR$/src/pages/Landing/conflationLayerLRS/conflation.js" />
         <option value="$PROJECT_DIR$/src/components/AvlMap/components/infobox/Infobox.js" />
         <option value="$PROJECT_DIR$/src/pages/Landing/conflationLayerLRS/tmcDisplay.js" />
+        <option value="$PROJECT_DIR$/src/store/config.js" />
         <option value="$PROJECT_DIR$/src/pages/Landing/conflationLayerLRS/conflationLayer.js" />
         <option value="$PROJECT_DIR$/src/pages/Landing/index.js" />
-        <option value="$PROJECT_DIR$/src/pages/Landing/conflationLayer/conflation.js" />
+        <option value="$PROJECT_DIR$/src/pages/Landing/geo/lrs_ways.geojson" />
         <option value="$PROJECT_DIR$/src/pages/Landing/conflationLayerLRS/conflationLRS.js" />
+        <option value="$PROJECT_DIR$/src/pages/Landing/conflationLayer/conflation.js" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/package.json" />
-    </packageJsonPaths>
-  </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+  <component name="ProjectFrameBounds" extendedState="1" fullScreen="true">
+    <option name="y" value="32" />
+    <option name="width" value="960" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -254,47 +157,52 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="npmrds4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="npmrds4" type="462c0819:PsiDirectoryNode" />
+              <item name="conflationmap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="conflationmap" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="npmrds4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="npmrds4" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="npmrds4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="npmrds4" type="462c0819:PsiDirectoryNode" />
+              <item name="conflationmap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="conflationmap" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="npmrds4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="npmrds4" type="462c0819:PsiDirectoryNode" />
+              <item name="conflationmap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="conflationmap" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="npmrds4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="npmrds4" type="462c0819:PsiDirectoryNode" />
+              <item name="conflationmap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="conflationmap" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="Landing" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="npmrds4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="npmrds4" type="462c0819:PsiDirectoryNode" />
+              <item name="conflationmap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="conflationmap" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="Landing" type="462c0819:PsiDirectoryNode" />
-              <item name="conflationLayer" type="462c0819:PsiDirectoryNode" />
+              <item name="conflationLayerLRS" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="npmrds4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="npmrds4" type="462c0819:PsiDirectoryNode" />
+              <item name="conflationmap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="conflationmap" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="Landing" type="462c0819:PsiDirectoryNode" />
+              <item name="geo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="conflationmap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="conflationmap" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="store" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -302,12 +210,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="side&#9;null&#9;null&#10;sidebar-content&#9;null&#9;null&#10;infobo&#9;null&#9;null&#10;mapl&#9;FILE&#9;file:///Users/shaun/avail/npmrds_visulizer/npmrds4/src/components/AvlMap/MapLayer.js&#10;modal&#9;null&#9;null&#10;icons&#9;FILE&#9;file:///Users/shaun/avail/npmrds_visulizer/npmrds4/src/components/common/icons&#10;tool&#9;FILE&#9;file:///Users/shaun/avail/npmrds_visulizer/npmrds4/src/components/AvlMap/components/tooltip&#10;.json&#9;null&#9;null&#10;webpa&#9;FILE&#9;file:///Users/shaun/avail/npmrds_visulizer/npmrds4/node_modules/recharts/demo/webpack.config.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -318,7 +224,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -360,17 +266,20 @@
       <workItem from="1553027886837" duration="1084000" />
       <workItem from="1553175240053" duration="3752000" />
       <workItem from="1553201892850" duration="27538000" />
+      <workItem from="1555423107259" duration="4882000" />
+      <workItem from="1556128761432" duration="27000" />
+      <workItem from="1556721336976" duration="9789000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149714000" />
+    <option name="totallyTimeSpent" value="164412000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="-30" width="1920" height="1110" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28594506" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26019314" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -385,9 +294,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49919224" visible="true" weight="0.40684932" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49919224" visible="true" weight="0.24245578" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50080776" side_tool="true" weight="0.17534247" />
       <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -397,22 +307,13 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="right" id="Maven" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pages/NAT/layers/buildingsLayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="30" lean-forward="true" selection-end-line="58" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/NAT/layers/npmrds/pm3.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -454,13 +355,7 @@
     <entry file="file://$PROJECT_DIR$/src/pages/NAT/layers/npmrds/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/inrix_2018.geojson">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/inrix_2018.geojson" />
     <entry file="file://$PROJECT_DIR$/node_modules/mapbox-gl/dist/style-spec/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -544,9 +439,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/node_attr_update.geojson">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/node_attr_update.geojson" />
     <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/inrix_2018_updated.geojson">
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state>
@@ -583,20 +476,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/lrs_to__ways_mapping.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="23454" selection-start-column="23445" selection-end-column="23454" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/split_ways.geojson">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret column="963342" selection-start-column="963320" selection-end-column="963342" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/lrs_to__ways_mapping.json" />
     <entry file="file://$PROJECT_DIR$/src/components/AvlMap/components/sidebar/sidebar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="707">
@@ -620,25 +500,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Landing/conflationLayerLRS/tmcDisplay.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/AvlMap/components/infobox/Infobox.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/lrs_to_ways_mapping.json">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/react-vis/dist/dist.min.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -647,55 +514,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/lrs_ways_bearing.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret column="3456" selection-start-column="3452" selection-end-column="3456" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/lrs_ways.geojson">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1033865" selection-start-column="1033865" selection-end-column="1033865" />
-        </state>
-      </provider>
-      <provider editor-type-id="LargeFileEditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/bidirectional_ways.geojson">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret column="5113451" selection-start-column="5113327" selection-end-column="5113451" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/lrs.geojson">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="174">
-          <caret column="787843" selection-start-column="787837" selection-end-column="787843" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Landing/conflationLayerLRS/conflationLayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="18" column="6" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="18" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Landing/conflationLayerLRS/conflationLRS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/lrs_ways_bearing.json" />
+    <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/bidirectional_ways.geojson" />
     <entry file="file://$PROJECT_DIR$/src/store/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -712,27 +532,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/config.js">
+    <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/split_ways.geojson">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
+        <state relative-caret-position="198">
+          <caret column="963342" selection-start-column="963320" selection-end-column="963342" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Landing/index.js">
+    <entry file="file://$PROJECT_DIR$/src/pages/Landing/conflationLayerLRS/tmcDisplay.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        <state relative-caret-position="215">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Landing/conflationLayerLRS/conflationLayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/lrs_to_ways_mapping.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Landing/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/lrs.geojson">
+      <provider selected="true" editor-type-id="LargeFileEditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/lrs_WGS84.geojson">
+      <provider selected="true" editor-type-id="LargeFileEditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Landing/geo/lrs_ways.geojson">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret column="2705" selection-end-column="828412" />
+        </state>
+      </provider>
+      <provider editor-type-id="LargeFileEditor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Landing/conflationLayer/conflation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+        <state relative-caret-position="324">
+          <caret line="132" column="61" selection-start-line="132" selection-start-column="61" selection-end-line="132" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Landing/conflationLayerLRS/conflationLRS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-144">
+          <caret line="70" column="61" lean-forward="true" selection-start-line="70" selection-start-column="61" selection-end-line="70" selection-end-column="61" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>

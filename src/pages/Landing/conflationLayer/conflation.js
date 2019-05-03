@@ -37,7 +37,7 @@ let unmatched_tmc = Object.keys(tmc_to_ways).reduce(function(out, tmc){
     return out
 }, [])
 const conflation = new MapLayer("TMC Layer", {
-    active: true,
+    active: false,
     sources: [
         { id: "inrix",
             source: {
@@ -71,7 +71,7 @@ const conflation = new MapLayer("TMC Layer", {
                 },
                 'line-offset': {
                     base: 0,
-                    stops: [[0, 0], [18, 15]]
+                    stops: [[5, 0], [9, 1], [15, 1], [18, 2]]
                 },
 
             },
@@ -80,7 +80,7 @@ const conflation = new MapLayer("TMC Layer", {
             filter: ['all',['<=','f_system',2]]
         },
 
-        { 'id': 'conflation',
+        /*{ 'id': 'conflation',
             'source': 'conflation',
             'type': 'line',
             'source-layer': 'split_ways',
@@ -90,15 +90,15 @@ const conflation = new MapLayer("TMC Layer", {
                     base: 5,
                     stops: [[5, 5], [18, 13]]
                 },
-                /*'line-offset': {
+                /!*'line-offset': {
                     base: 0,
                     stops: [[0, 0], [18, 15]]
                 },
-*/
+*!/
             },
             'layout': {
                 'visibility': 'visible'},
-        },
+        },*/
         /*{ "id": "state-fills",
             "source": "inrix",
             'type': 'line',
@@ -130,7 +130,7 @@ const conflation = new MapLayer("TMC Layer", {
                 },
                 'line-offset': {
                     base: 2,
-                    stops: [[0, 0], [18, 15]]
+                    stops: [[5, 0], [9, 1], [15, 1], [18, 2]]
                 },
 
             },

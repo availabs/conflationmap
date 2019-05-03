@@ -1,5 +1,5 @@
 import React from "react"
-import lrs from '../geo/lrs.geojson'
+import lrs from '../geo/lrs_WGS84.geojson'
 //import osm from '../geo/bidirectional_ways.geojson' // non split
 import osm from '../geo/lrs_ways.geojson' // split
 //import tmc_to_ways from '../geo/tmc_to_ways_mapping.json' // non split
@@ -39,7 +39,7 @@ let unmatched_lrs = Object.keys(lrs_to_ways).reduce(function(out, lrs_milepoint)
 }, []);
 
 const conflationLRS = new MapLayer("LRS Layer", {
-    active: false,
+    active: true,
     sources: [
         { id: "lrs",
             source: {
@@ -68,7 +68,7 @@ const conflationLRS = new MapLayer("LRS Layer", {
                 },
                 'line-offset': {
                     base: 0,
-                    stops: [[0, 0], [18, 15]]
+                    stops: [[5, 0], [9, 1], [15, 1], [18, 2]]
                 }
             },
             'layout': {
@@ -207,6 +207,7 @@ const conflationLRS = new MapLayer("LRS Layer", {
 
                 ]
             }else if (feature.source === 'osm'){
+                console.log(feature);
                 return [feature.properties.id,
                     ["Road Name", feature.properties.name],
                     ["Road Number", feature.properties.ref],
